@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}
+Histogram
+{% endblock title %}
+
+
+{% block content %}
+
+{{chart_label}}
+<div style="width: 50%;">
+    <canvas id="histogram_frequency" data-url="{% url 'json_histogram' event_name datetime %}" width="1200" height="600" ></canvas>
+</div>
+
+
+<script>
+
+    $(function () {
+        var $populationChart = $("#histogram_frequency");
+        $.ajax({ url: $populationChart.data("url"), success: function (data) {
+
+            var ctx = $populationChart[0].getContext("2d");
+
+            Chart.defaults.global.legend.display = false;
+            new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: data.chart_labels, //done labels
+                datasets: [{
+                label: 'Frequency',
+                backgroundColor: data.chart_colors,
+                borderColor: data.chart_colors,
+                borderWidth: 2,
+                data: data.chart_events
+                }]          
+            },
+            options: {
+                responsive: false,
+                fontSize : 25,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min : 0,
+                            max : this.max,
+                            beginAtZero: true,
+                            fontSize : 16,
+                        },
+                        scaleLabel : {
+                            display : true,
+                            labelString : "Frequency",
+                            fontStyle : "normal",
+                            fontSize : 15,
+                            padding : 6,
+                        },
+                    }],
+                    xAxes: [{
+                        scaleLabel : {
+                            display : true,
+                            labelString : "Hours",
+                            fontStyle : "normal",
+                            fontSize : 15,
+                            padding : 6,
+                        },
+                        ticks : {
+                            fontSize : 16,
+                        }
+                    }]
+                },
+            }
+            });
+
+        }
+        });
+
+        });
+
+
+
+</script>
+{% endblock content %}
