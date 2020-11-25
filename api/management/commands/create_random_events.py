@@ -69,7 +69,7 @@ class Command(BaseCommand):
         a = 0
         bulk_list = []
 
-        while a < 30000:
+        while a < 8000:
             try:
                 random_number = randint(0, len(event_types)-1)
                 event = Event.objects.get(event__name=event_types[random_number])

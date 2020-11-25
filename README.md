@@ -37,7 +37,7 @@ The app is running in  <abbr title="Heroku is a platform as a service (PaaS) tha
 
 `$ python manage.py migrate`
 
-`$ python manage.py create_random_events` <= this command will fill the database with some data. It takes around 10 - 12 secconds.
+`$ python manage.py create_random_events` <= this command will fill the database with some data. It takes less than 10 secconds.
 
 `$ python manage.py createsuperuser --user username`
 
