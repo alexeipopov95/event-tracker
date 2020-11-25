@@ -17,7 +17,7 @@ Platform Admins
 
 #### Cloud
 
-The app is running in  <abbr title="Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.">Herokus</abbr> platform. [See the App...](#)
+The app is running in  <abbr title="Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.">Herokus</abbr> platform. [See the App...](https://event-trackerr.herokuapp.com/)
 
 ## Testing on Local
 
