@@ -1,1 +1,1 @@
-web: gunicorn challenge.wsgi --log-file -
+web: gunicorn challenge.wsgi

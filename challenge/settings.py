@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
+
+import django_heroku
+
 import dj_database_url
 from decouple import config
 from datetime import datetime
@@ -156,3 +159,7 @@ STATICFILES_DIRS = (
 )
 
 TODAY = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
+
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
