@@ -1,1 +1,1 @@
-web: gunicorn challenge/wsgi.py
+web: gunicorn challenge.wsgi
