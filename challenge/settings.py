@@ -97,14 +97,14 @@ WSGI_APPLICATION = 'challenge.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 
-#For local testing uncomment this one
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 """
 
 DATABASES = {
@@ -112,6 +112,7 @@ DATABASES = {
         default=config('DATABASE_URL')
     )
 }
+"""
 
 
 
